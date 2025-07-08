@@ -1,12 +1,13 @@
 import requests
-from config import BILLZ_CLIENT_ID, BILLZ_CLIENT_SECRET, BILLZ_AUTH_URL
+from config import BILLZ_SECRET_TOKEN, BILLZ_AUTH_URL
+
 
 def get_billz_token():
-    response = requests.post(BILLZ_AUTH_URL, data={
-        "client_id": BILLZ_CLIENT_ID,
-        "client_secret": BILLZ_CLIENT_SECRET,
-        # "grant_type": "client_credentials" — если нужно
-    })
+    response = requests.post(
+        BILLZ_AUTH_URL,
+        json={"secret_token": BILLZ_SECRET_TOKEN},
+        headers={"Content-Type": "application/json"}
+    )
 
     if response.status_code == 200:
         return response.json()["access_token"]
