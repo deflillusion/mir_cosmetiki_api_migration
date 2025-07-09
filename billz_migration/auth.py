@@ -10,6 +10,11 @@ def get_billz_token():
     )
 
     if response.status_code == 200:
-        return response.json()["access_token"]
+        data = response.json().get("data", {})
+        token = data.get("access_token")
+        if not token:
+            raise Exception("⚠️ 'access_token' not found in response['data']")
+        return token
     else:
-        raise Exception(f"Auth failed: {response.status_code} {response.text}")
+        raise Exception(
+            f"❌ Auth failed: {response.status_code} {response.text}")

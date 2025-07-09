@@ -3,9 +3,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BILLZ_CLIENT_ID = os.getenv("BILLZ_CLIENT_ID")
-BILLZ_CLIENT_SECRET = os.getenv("BILLZ_CLIENT_SECRET")
-BILLZ_AUTH_URL = "https://api.billz.kz/api/v1/token/"
-BILLZ_PRODUCTS_URL = "https://api.billz.kz/api/v1/products"
+# Авторизация и импорт по новому API
+BILLZ_SECRET_TOKEN = os.getenv("BILLZ_SECRET_TOKEN")
+BILLZ_PRODUCTS_URL = "https://api-admin.billz.ai/v2/product-import/create-with-products"
+BILLZ_AUTH_URL = "https://api-admin.billz.ai/v1/auth/login"
+SHOP_ID = os.getenv("BILLZ_SHOP_ID")
+
+# (опционально) стандартные значения
+BILLZ_MEASUREMENT_UNIT_ID = os.getenv("BILLZ_MEASUREMENT_UNIT_ID")
+BILLZ_CATEGORY_ID = os.getenv("BILLZ_CATEGORY_ID")
+BILLZ_SUPPLIER_ID = os.getenv("BILLZ_SUPPLIER_ID")
+BILLZ_BRAND_ID = os.getenv("BILLZ_BRAND_ID")
+BILLZ_CUSTOMERS_URL = os.getenv("BILLZ_CUSTOMERS_URL")
+
 
 POSTGRES_DSN = os.getenv("POSTGRES_DSN")
