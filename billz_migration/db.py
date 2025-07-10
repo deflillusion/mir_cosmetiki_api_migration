@@ -45,6 +45,7 @@ def get_unique_clients():
         p.phone
     FROM public.g_client p
     WHERE p.is_category = 0
+      AND p.is_active = 1
       AND p.phone IS NOT NULL
       AND p.phone != ''
       AND (
