@@ -4,8 +4,8 @@ BILLZ_PRODUCTS_URL=https://api-admin.billz.ai/v2/product-import/create-with-prod
 BILLZ_CUSTOMERS_URL=https://api-admin.billz.ai/v1/client
 
 BILLZ_SHOP_ID=fa0a3f4b-1af4-4a86-a40c-5e0b39f127d9
-BILLZ_MEASUREMENT_UNIT_ID=2e77e0b3-f173-4f77-b39a-5ec7f36c501a
-BILLZ_CATEGORY_ID=f31da3e2-cded-478f-abb3-8b6d72c43653
+BILLZ_MEASUREMENT_UNIT_ID=4fdedaec-eb55-45b8-b6de-94cd253f2ffe
+BILLZ_CATEGORY_ID=550dade5-a8b8-4ff8-8b66-e7d5bb326c9e
 BILLZ_SUPPLIER_ID=cf2bf476-2215-4d19-be78-e36ba9610408
 BILLZ_BRAND_ID=3a862e16-9e10-4850-9fd1-abe28c2a19b9
 

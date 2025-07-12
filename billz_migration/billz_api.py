@@ -1,6 +1,6 @@
 import requests
 from auth import get_billz_token
-from config import BILLZ_PRODUCTS_URL, SHOP_ID, BILLZ_CUSTOMERS_URL
+from config import BILLZ_PRODUCTS_URL, SHOP_ID, BILLZ_CUSTOMERS_URL, BILLZ_MEASUREMENT_UNIT_ID, BILLZ_CATEGORY_ID
 
 
 def send_products_to_billz(products, batch_size=1000):
@@ -30,8 +30,9 @@ def send_products_to_billz(products, batch_size=1000):
                 "wholesale_price": float(product[5]),      # volume_price
                 "sku": product[1],                         # articul
                 "barcode": product[3],                     # barcode
-                "measurement_value": float(product[6]),
-                # "measurement_unit_id": "8711b37a-42bf-4bc2-84fd-6de4673d6302"  # kg
+                "measurement_value": float(product[7]),
+                "measurement_unit_id": BILLZ_MEASUREMENT_UNIT_ID,
+                "category_ids": [BILLZ_CATEGORY_ID] if product[6] == 1 else []
             })
 
         payload = {

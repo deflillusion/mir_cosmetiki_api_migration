@@ -13,6 +13,7 @@ def get_products():
             p.barcode,
             p.price,
             p.volume_price,
+            p.is_kaspi_shop,
             s.amount 
         FROM 
             public.g_product p

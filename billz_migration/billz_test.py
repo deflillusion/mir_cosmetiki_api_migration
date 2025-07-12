@@ -1,6 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
+from config import BILLZ_PRODUCTS_URL, SHOP_ID, BILLZ_CUSTOMERS_URL, BILLZ_MEASUREMENT_UNIT_ID, BILLZ_CATEGORY_ID
 
 load_dotenv()
 
@@ -41,13 +42,15 @@ def send_test_product():
         "shop_id": "fa0a3f4b-1af4-4a86-a40c-5e0b39f127d9",
         "products": [
             {
-                "name": "Тестовый товар",
-                "retail_price": 0,
-                "supply_price": 0,
-                "wholesale_price": 0,
-                "sku": "TEST-123",
-                "barcode": "1234567890123",
-                "measurement_value": 0.9,
+                "name": "Тестовый товар 12-07-2025",
+                "retail_price": 1999,
+                "supply_price": 999,
+                "wholesale_price": 999,
+                "sku": "TEST-999",
+                "barcode": "1234567890999",
+                "measurement_value": 9,
+                "measurement_unit_id": BILLZ_MEASUREMENT_UNIT_ID,
+                "category_ids": [BILLZ_CATEGORY_ID]
             }
         ]
     }
